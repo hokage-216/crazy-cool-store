@@ -1,2 +1,1 @@
-# crazy-cool-store
-Web e-commerce application.
+# E-commerce Back End Starter Code
