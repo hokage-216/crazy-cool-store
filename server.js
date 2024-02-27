@@ -1,6 +1,8 @@
 const express = require('express');
 const routes = require('./routes');
 // import sequelize connection
+const syncTables = require('./config/sync.js');
+await syncTables();
 
 const app = express();
 const PORT = process.env.PORT || 3001;

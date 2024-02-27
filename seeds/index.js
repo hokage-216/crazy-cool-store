@@ -3,10 +3,10 @@ const seedProducts = require('./product-seeds');
 const seedTags = require('./tag-seeds');
 const seedProductTags = require('./product-tag-seeds');
 
-const sequelize = require('../config/connection');
+const syncTables = require('../config/sync.js');
 
 const seedAll = async () => {
-  await sequelize.sync({ force: true });
+  await syncTables();
   console.log('\n----- DATABASE SYNCED -----\n');
   await seedCategories();
   console.log('\n----- CATEGORIES SEEDED -----\n');
