@@ -1,4 +1,4 @@
-const sequelize = require('./config/connection.js');
+const sequelize = require('./connection.js');
 
 async function syncTables() {
     try {
