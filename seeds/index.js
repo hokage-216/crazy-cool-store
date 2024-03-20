@@ -3,24 +3,34 @@ const seedProducts = require('./product-seeds');
 const seedTags = require('./tag-seeds');
 const seedProductTags = require('./product-tag-seeds');
 
-const syncTables = require('../config/sync.js');
-
 const seedAll = async () => {
-  await syncTables();
-  console.log('\n----- DATABASE SYNCED -----\n');
-  await seedCategories();
-  console.log('\n----- CATEGORIES SEEDED -----\n');
+  try {
+    // Add Category seeds
+    const categoryData = await seedCategories();
+    console.log(categoryData);
+    console.log('----- CATEGORIES SEEDED -----');
 
-  await seedProducts();
-  console.log('\n----- PRODUCTS SEEDED -----\n');
+    // Add Product seeds
+    const productData = await seedProducts();
+    console.log(productData);
+    console.log('----- PRODUCTS SEEDED -----');
 
-  await seedTags();
-  console.log('\n----- TAGS SEEDED -----\n');
+    // Add Tag seeds
+    const tagData = await seedTags();
+    console.log(tagData);
+    console.log('----- TAGS SEEDED -----');
 
-  await seedProductTags();
-  console.log('\n----- PRODUCT TAGS SEEDED -----\n');
+    // Add Product Tag seeds
+    const productTagData = await seedProductTags();
+    console.log(productTagData);
+    console.log('----- PRODUCT TAGS SEEDED -----');
 
-  process.exit(0);
+    // Exit process
+    process.exit(0);
+  } catch (error) {
+    console.error(error);
+    process.exit(1); // Exit with error code
+  }
 };
 
-seedAll();
+module.exports = seedAll;

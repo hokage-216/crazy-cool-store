@@ -1,28 +1,15 @@
-async function init() {
-  try {
-    const express = require('express');
-    const routes = require('./routes');
-    // import sequelize connection
-    const syncTables = require('./config/sync.js');
+require('dotenv').config();
+const express = require('express');
+const app = express();
+const routes = require('./routes');
 
-    await syncTables();
+const PORT = process.env.PORT || 3001;
 
-    const app = express();
-    const PORT = process.env.PORT || 3001;
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-    app.use(express.json());
-    app.use(express.urlencoded({ extended: true }));
+app.use(routes);
 
-    app.use(routes);
-
-    // sync sequelize models to the database, then turn on the server
-    app.listen(PORT, () => {
-      console.log(`App listening on port ${PORT}!`);
-    });
-  } catch (error) {
-    console.log(error);
-  }
-}
-
-
-init();
+app.listen(PORT, () => {
+  console.log(`App listening on port ${PORT}!`);
+});
