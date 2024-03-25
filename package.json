@@ -6,6 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "seed": "node ./seeds/index.js",
+    "sequelize": "node ./config/sequelize-sync.js",
+    "mysql2-sync": "node ./config/mysql2-sync.js",
     "start": "node server.js",
     "watch": "nodemon server.js"
   },

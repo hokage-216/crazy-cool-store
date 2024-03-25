@@ -1,17 +1,12 @@
 const seedCategories = require('./category-seeds');
 const seedProducts = require('./product-seeds');
 const seedTags = require('./tag-seeds');
-const syncTables = require('../config/sync');
 const seedProductTags = require('./product-tag-seeds');
 
 const seedAll = async () => {
   
   try {
-    // Sync Tables
-    await syncTables();
-    console.log('----- DATABASE SYNCED -----');
-
-    // Add Category seeds
+   // Add Category seeds
     await seedCategories();
     console.log('----- CATEGORIES SEEDED -----');
 
