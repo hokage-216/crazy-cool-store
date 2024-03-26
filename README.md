@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Crazy-Cool-Store
+Crazy-Cool-Store is a template database that utilizes Node.js, Express.js, Sequelize & MySql2.
 
 ## Table of Contents
 - [Installation](#installation)
@@ -45,8 +45,6 @@ PORT=''
 
 Replace 'USER' with the username of your workbench connection (typically 'root'), and if a password is utilized replace with 'PASS'. Lastly, replace 'DATABASE' with the name of your database.
 
-![ENV Example](./res/uri-example.png)
-
 ### MySQL Workbench Setup (Windows)
 
 Load the MySQL Shell in the terminal:
@@ -66,14 +64,6 @@ Create schema:
 ```
 \sql drop database if exists [DATABASE]b && \sql create database [DATABASE]
 ```
-
-Set the active schema:
-
-```
-\use [DATABASE]
-```
-
-![Database Creation Example](./res/database-creation.png)
 
 ## Usage
 
@@ -126,7 +116,7 @@ npm start
 
 Click the image below to view a live demonstation.
 
-[![Video Demonstration Link](https://img.youtube.com/vi/GTsW5hLtMfo/0.jpg)](https://youtu.be/GTsW5hLtMfo)
+[![Video Demonstration Link](https://img.youtube.com/vi/An23xTScjgg/maxresdefault.jpg)](https://youtu.be/An23xTScjgg)
 
 ## Questions
 
