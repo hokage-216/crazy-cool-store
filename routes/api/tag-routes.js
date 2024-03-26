@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
     include: [
       {
         model: Product,
-        as: 'product',
+        as: 'products',
         through: ProductTag,
         attributes: ['id', 'product_name', 'price', 'stock', 'category_id'],
       },
@@ -26,7 +26,7 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
   // find a single tag by its `id`
-  Book.findOne(
+  Tag.findOne(
     {
       where: { 
         id: req.params.id 
